@@ -37,7 +37,21 @@ else:
                 print(s, schet)
                 break
 
+# -----------------------------------------------------------------------------------------------
+# Вариант с использованием рекурсии:
 
+def f(a, schet):
+    if int(a) < 10:
+        return a, schet
+    schet += 1
+    s = 0
+    for i in range(len(a)):
+        s += int(a[i])
+    a = str(s)
+    return f(a, schet)
+
+
+print(*f(input(), schet=0))
 
 
 
